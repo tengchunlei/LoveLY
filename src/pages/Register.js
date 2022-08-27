@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-function Component() {
-  return (
-    <>
-      <h1>Register</h1>
-    </>
-  );
+function Component(){
+return(
+    <div>
+     <h1>Register</h1>
+    </div>
+
+);
+
 }
 
 export default Component;
