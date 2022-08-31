@@ -3,6 +3,10 @@ import React from 'react';
 import { validate } from 'schema-utils';
 import styled from 'styled-components';
 import {useStores} from '../stores';
+import { useHistory } from 'react-router-dom';
+
+
+
 const Wrapper=styled.div`
 max-width:600px;
 margin:30px  auto;
@@ -35,12 +39,14 @@ const tailLayout={
 
 const Component = () => {
   const {AuthStore} =useStores() ;
+  const history=useHistory ();
   const onFinish = (values) => {
     AuthStore.setUsername(values.username);
     AuthStore.setPassword(values.password);
     console.log('Success:', values);
     AuthStore.login().then(()=>{
       console.log('登录成功，跳转到首页')
+      history.push('/')
   }).catch(()=>{
     console.log('登录失败')
   });
@@ -58,7 +64,7 @@ const Component = () => {
   const validateUsername=(rule,value)=>{
       if(/\W/.test(value)) return Promise.reject('只能是字母数字下划线');
       if(value.length<4  || value.length>10) return Promise.reject('长度为4-10个字符');
-      Promise.resolve ();
+       return Promise.resolve ();
   }
 
 
