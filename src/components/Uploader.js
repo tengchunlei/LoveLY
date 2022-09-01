@@ -4,7 +4,6 @@ import {useStores} from '../stores';
 import {observer,useLocalStore} from 'mobx-react';
 import  {message, Upload,Spin}  from   'antd';
 import  {InboxOutlined} from '@ant-design/icons';
-import { useSyncExternalStore } from 'react';
 import styled from 'styled-components';
 const {Dragger} =Upload;
 const Result=styled.div`
@@ -130,8 +129,8 @@ return (
 
 <dt>更多尺寸</dt>
 <dd>
-<input ref={ref1} onChange={bindWidthChange} placeholder="请在此处输入最大宽度"/>
-<input ref={ref2} onChange={bindHeightChange} placeholder="请在此处输入最大高度"/>
+<input ref={ref1} onChange={bindWidthChange} placeholder="请在此处输入最大宽度哦"/>
+<input ref={ref2} onChange={bindHeightChange} placeholder="请在此处输入最大高度哦"/>
 </dd>
 
 <dd>
