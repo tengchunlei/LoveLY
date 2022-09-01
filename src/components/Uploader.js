@@ -8,12 +8,12 @@ import { useSyncExternalStore } from 'react';
 import styled from 'styled-components';
 const {Dragger} =Upload;
 const Result=styled.div`
-margin-top:10px;
+margin-top:15px;
 border:1px dashed #ccc;
-padding:20px;
+padding:18px;
 `
 const H1=styled.h1`
-margin:20px;
+margin:18px;
 text-align:center;
 `
 const Image =styled.img`
@@ -67,13 +67,13 @@ const  props={
     ImageStore.setFile(file);
     ImageStore.setFilename(file.name);
     if(UserStore.currentUser===null ){
-      message.warning('请先登录再上传');
+      message.warning('请先登录再进行上传哦');
        return false;
     }   
     
 window.file=file;
     if(!/(svg)$|(png$)|(jpg$)|(jpeg$)|(gif$)/ig.test(file.type)){
-      message.error('仅限上传svg/png/jpg/jpeg/gif类型的文件')
+      message.error('仅限上传png/jpg/jpeg/gif类型的图片')
       return false;
     }
 
@@ -101,9 +101,9 @@ return (
     <p className="ant-upload-drag-icon">
       <InboxOutlined />
     </p>
-    <p className="ant-upload-text">点击或者拖拽文件进行上传</p>
+    <p className="ant-upload-text">点击或者拖拽文件上传哦</p>
     <p className="ant-upload-hint">
-      仅限上传.svg/.png/.jpg/.gif类型的图片且最大不超过1M
+      仅限上传.png/.jpg/.gif类型的图片且最大不超过1M哦
     </p>
   </Dragger>
 </Spin>
@@ -113,12 +113,12 @@ return (
  <Result>
 <H1>上传结果</H1>
 <dl>
-  <dt>在线地址</dt>
+  <dt>在线预览</dt>
   <dd>
     <a target="_blank" href={ImageStore.serverFile.attributes.url.attributes.url}>{ImageStore.serverFile.attributes.url.attributes.url}</a>
   </dd>
 
-  <dt>文件名</dt>
+  <dt>文件名称</dt>
   <dd>
   {ImageStore.filename}
   </dd>
@@ -130,8 +130,8 @@ return (
 
 <dt>更多尺寸</dt>
 <dd>
-<input ref={ref1} onChange={bindWidthChange} placeholder="最大宽度可选"/>
-<input ref={ref2} onChange={bindHeightChange} placeholder="最大高度可选"/>
+<input ref={ref1} onChange={bindWidthChange} placeholder="请在此处输入最大宽度"/>
+<input ref={ref2} onChange={bindHeightChange} placeholder="请在此处输入最大高度"/>
 </dd>
 
 <dd>
