@@ -1,6 +1,5 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
-import { validate } from 'schema-utils';
 import styled from 'styled-components';
 import {useStores} from '../stores';
 import { useHistory } from 'react-router-dom';
@@ -92,7 +91,7 @@ const Component = () => {
         rules={[
           {
             required: true,
-            message: '请输入用户名',
+            message: '请输入用户名哦',
           },
          
           {
@@ -109,7 +108,7 @@ const Component = () => {
         rules={[
           {
             required: true,
-            message: '请输入密码',
+            message: '请输入密码哦',
           },
           {
             min:4,
