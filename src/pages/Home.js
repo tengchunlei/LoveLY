@@ -13,7 +13,7 @@ const  Home = observer(()=>{
     
     return (
         <>
-         <Tips>请先登录再上传哦</Tips>
+         <Tips>请您先登录然后再进行上传操作哦</Tips>
         <Uploader/>
   
         </>
