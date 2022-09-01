@@ -1,6 +1,5 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
-import { validate } from 'schema-utils';
 import styled from 'styled-components';
 import {useStores} from '../stores';
 import { useHistory } from 'react-router-dom';
@@ -45,7 +44,7 @@ const history=useHistory();
     AuthStore.setPassword(values.password);
     AuthStore.register() 
         .then(()=>{
-        console.log('注册成功，跳转到首页')
+        console.log('注册成功，即将跳转到首页')
         history.push ('/')
     }).catch(()=>{
       console.log('登录失败，什么都不做')
@@ -67,7 +66,7 @@ const history=useHistory();
   const validateConfirm=({getFieldValue})=>({
         validator(rule,value){
             if(getFieldValue('password')===value)  return Promise.resolve ();
-            return Promise.reject('两次密码不一致，请重新检查哦');
+            return Promise.reject('两次密码输入不一致，请重新检查后再输入哦');
         }
     })
 
