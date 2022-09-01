@@ -18,7 +18,7 @@ class HistoryStore {
         .then(newList=>{
             this.append(newList);
             this.page++;
-             if(newList.length<this.length)
+             if(newList.length<this.limit)
              { this.hasMore=false;}
 
         }).catch(error=>{
@@ -29,7 +29,7 @@ class HistoryStore {
         
     }
         @action reset(){
-        this.list={};
+        this.list=[];
         this.isLoading=false;
         this.hasMore=true;
         this.page=0;

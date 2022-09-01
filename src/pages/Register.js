@@ -74,7 +74,7 @@ const history=useHistory();
 
   return (
     <Wrapper> 
-    <Title>注册</Title>
+    <Title>注册账户</Title>
     <Form
     {...layout}
       name="basic"

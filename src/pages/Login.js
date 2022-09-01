@@ -71,7 +71,7 @@ const Component = () => {
 
   return (
     <Wrapper> 
-    <Title>登录</Title>
+    <Title>点击登录</Title>
     <Form
     {...layout}
       name="basic"

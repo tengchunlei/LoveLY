@@ -9,16 +9,16 @@ import {observer}from 'mobx-react';
 const Header=styled.header`
 display:flex;
 align-items:center;
-background-color:#02101f;
+background-color:rgb(52, 58, 64);
 padding: 15px 100px;
 color:#fff;
 `;
 const StyledLink=styled(NavLink)`
 color:#fff;
-margin-left:30px;
+margin-left:38px;
 
 &.active{
-    border-bottom:1px solid #fff;
+    border-bottom:3px solid rgb(24, 144, 255);
 }
 `;
 
@@ -34,6 +34,7 @@ const Login = styled.div`
 const  StyledButton=styled(Button)
 `
 margin-left:15px;
+
 
 `
 
@@ -67,19 +68,19 @@ const Component = observer(()=>{
         <nav> 
         <StyledLink to="/" activeClassName="active" exact>首页</StyledLink>
         <StyledLink to="/history" activeClassName="active">历史上传</StyledLink>
-        <StyledLink to="/about" activeClassName="active">关于我</StyledLink>
+        <StyledLink to="/about" activeClassName="active">关于爱旭</StyledLink>
         </nav>
 
         <Login>
             {
             UserStore.currentUser?
             <>{UserStore.currentUser.attributes.username}
-            <StyledButton type="primary" onClick={handleLogout}>注销</StyledButton>
+            <StyledButton type="primary" onClick={handleLogout}>立即注销</StyledButton>
             </> 
             :
             <>
-            <StyledButton type="primary" onClick={handleLogin}>登录</StyledButton>
-            <StyledButton type="primary"onClick={handleRegister}>注册</StyledButton>
+            <StyledButton type="primary" onClick={handleLogin}>点击登录</StyledButton>
+            <StyledButton type="primary"onClick={handleRegister}>注册账户</StyledButton>
             </>
               }
         </Login>
