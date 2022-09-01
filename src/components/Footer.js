@@ -15,7 +15,7 @@ font-size:16px;
 function Component(){
 return(
     <Footer>
-         <p>Copyright© 2021-2022 爱旭图床 版权所有</p>
+         <p>Copyright© 2021-2022 爱旭图床 版权所有侵权必究</p>
     </Footer>
 );
 
