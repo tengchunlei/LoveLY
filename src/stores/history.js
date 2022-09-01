@@ -22,7 +22,7 @@ class HistoryStore {
              { this.hasMore=false;}
 
         }).catch(error=>{
-            message.error('加载数据失败');
+            message.error('数据加载失败');
         }).finally( ()=>{
             this.Loading=false;
         });
