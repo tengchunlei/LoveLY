@@ -5,16 +5,17 @@ text-align:center;
 position:absolute;
 bottom:1px;
 width:100%;
-height:33px;
-color:black;
-font-size:18px;
+height:32px;
+background-color:rgb(52, 58, 64);
+color:#fff;
+font-size:16px;
 `;
 
 
 function Component(){
 return(
     <Footer>
-         <p>Copyright© 2021-2022 爱旭图床</p>
+         <p>Copyright© 2021-2022 爱旭图床 版权所有</p>
     </Footer>
 );
 
