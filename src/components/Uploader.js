@@ -1,4 +1,3 @@
-import { bind } from 'file-loader';
 import React ,{useRef}from 'react';
 import {useStores} from '../stores';
 import {observer,useLocalStore} from 'mobx-react';
@@ -66,13 +65,13 @@ const  props={
     ImageStore.setFile(file);
     ImageStore.setFilename(file.name);
     if(UserStore.currentUser===null ){
-      message.warning('请先登录再进行上传哦');
+      message.warning('请您先登录再进行上传操作哦');
        return false;
     }   
     
 window.file=file;
     if(!/(svg)$|(png$)|(jpg$)|(jpeg$)|(gif$)/ig.test(file.type)){
-      message.error('仅限上传png/jpg/jpeg/gif类型的图片')
+      message.error('只能上传png/jpg/jpeg/gif类型的图片')
       return false;
     }
 
@@ -117,12 +116,12 @@ return (
     <a target="_blank" href={ImageStore.serverFile.attributes.url.attributes.url}>{ImageStore.serverFile.attributes.url.attributes.url}</a>
   </dd>
 
-  <dt>文件名称</dt>
+  <dt>文件名</dt>
   <dd>
   {ImageStore.filename}
   </dd>
 
-  <dt>图片预览</dt>
+  <dt>预览图片</dt>
   <dd>
 <Image src={ImageStore.serverFile.attributes.url.attributes.url}/>
   </dd>
