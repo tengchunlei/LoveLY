@@ -8,14 +8,14 @@ import { useHistory } from 'react-router-dom';
 
 const Wrapper=styled.div`
 max-width:600px;
-margin:30px  auto;
-box-shadow:2px 2px 4px 0 rgba(0,0,0,0.2);
-border-radius:4px;
-padding:20px;
+margin:100px  auto;
+box-shadow:2px 2px 4px 4px rgba(0,0,0,0.2);
+border-radius:5px;
+padding:18px;
 `
 
 const Title=styled.h1`
-margin-bottom:30px;
+margin-bottom:25px;
 text-align:center;
 `
 
@@ -58,8 +58,8 @@ const history=useHistory();
   };
 
   const validateUsername=(rule,value)=>{
-      if(/\W/.test(value)) return Promise.reject('只能是字母数字下划线');
-      if(value.length<4  || value.length>10) return Promise.reject('长度为4-10个字符');
+      if(/\W/.test(value)) return Promise.reject('只能输入字母数字下划线哦');
+      if(value.length<4  || value.length>10) return Promise.reject('输入长度为4-10个字符哦');
      return Promise.resolve ();
   }
 
@@ -67,14 +67,14 @@ const history=useHistory();
   const validateConfirm=({getFieldValue})=>({
         validator(rule,value){
             if(getFieldValue('password')===value)  return Promise.resolve ();
-            return Promise.reject('两次密码不一致');
+            return Promise.reject('两次密码不一致，请重新检查哦');
         }
     })
 
 
   return (
     <Wrapper> 
-    <Title>注册账户</Title>
+    <Title>注册</Title>
     <Form
     {...layout}
       name="basic"
@@ -116,12 +116,12 @@ const history=useHistory();
           },
           {
             min:4,
-             message:'最少要输入4个字符'
+             message:'最少要输入4个字符哦'
              },
  
            {
            max:10,
-            message:'最多输入10个字符'
+            message:'最多只能输入10个字符哦'
             }
         ]}
       >

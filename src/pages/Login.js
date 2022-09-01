@@ -9,10 +9,10 @@ import { useHistory } from 'react-router-dom';
 
 const Wrapper=styled.div`
 max-width:600px;
-margin:30px  auto;
-box-shadow:2px 2px 4px 0 rgba(0,0,0,0.2);
-border-radius:4px;
-padding:20px;
+margin:100px  auto;
+box-shadow:2px 2px 4px 4px rgba(0,0,0,0.2);
+border-radius:5px;
+padding:18px;
 `
 
 const Title=styled.h1`
