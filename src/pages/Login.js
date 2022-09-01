@@ -45,10 +45,10 @@ const Component = () => {
     AuthStore.setPassword(values.password);
     console.log('Success:', values);
     AuthStore.login().then(()=>{
-      console.log('登录成功，跳转到首页')
+      console.log('登录成功，即将跳转到首页')
       history.push('/')
   }).catch(()=>{
-    console.log('登录失败')
+    console.log('登录失败，请重新检查用户名与密码')
   });
 
 
@@ -62,8 +62,8 @@ const Component = () => {
   };
 
   const validateUsername=(rule,value)=>{
-      if(/\W/.test(value)) return Promise.reject('只能是字母数字下划线');
-      if(value.length<4  || value.length>10) return Promise.reject('长度为4-10个字符');
+      if(/\W/.test(value)) return Promise.reject('只能是字母数字下划线哦');
+      if(value.length<4  || value.length>10) return Promise.reject('输入长度为4-10个字符哦');
        return Promise.resolve ();
   }
 
@@ -71,7 +71,7 @@ const Component = () => {
 
   return (
     <Wrapper> 
-    <Title>点击登录</Title>
+    <Title>登录</Title>
     <Form
     {...layout}
       name="basic"
@@ -113,12 +113,12 @@ const Component = () => {
           },
           {
             min:4,
-             message:'最少要输入4个字符'
+             message:'最少要输入4个字符哦'
              },
  
            {
            max:10,
-            message:'最多输入10个字符'
+            message:'最多只能输入10个字符哦'
             }
         ]}
       >
