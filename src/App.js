@@ -23,7 +23,7 @@ const Login=lazy(() =>import('./pages/Login'));
 const Register=lazy(() =>import('./pages/Register'));
 function App() {
   return (
-    <div className="app">
+    <>
     <Header/>
     <main>
     <Suspense fallback={<div>Loading</div>}>
@@ -33,17 +33,13 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/login"  component={Login} />
         <Route path="/register" component={Register} />
-    
-    
-    
-    
       </Switch>
       </Suspense>
      </main>
 
       <Footer/> 
   
-    </div>
+    </>
   );
 }
 

@@ -19,4 +19,4 @@ window.stores={
   HistoryStore
 }
 
-export const useStores = () => useContext(context);
+export const useStores = () => useContext(context); 
